@@ -14,6 +14,16 @@ create table ga_session_features
     browser text -- type of browser user used:
 );
 
-# 1.	Write a query that shows how many pageviews occurred in the last week
-# 2.	How many sessions have organic as a medium?
-# 3.	Create a list of all nodes with the amount of pageviews that came from users with an organic medium in the last 30 days with the highest number first
+# Write a query that shows how many pageviews occurred in the last week
+
+SELECT SUM(pageviews)
+FROM ga_session_views
+WHERE hit_timestamp > DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 7 day)
+
+# How many sessions have organic as a medium?
+
+SELECT COUNT(SESSION_ID)
+FROM ga_session_features
+WHERE medium = 'organic';
+
+# 
