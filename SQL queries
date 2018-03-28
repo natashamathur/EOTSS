@@ -1,0 +1,19 @@
+create table ga_session_views
+(
+    session_id text, -- id associated with a particular session (see here for more information https://support.google.com/analytics/answer/2731565?hl=en)
+    hit_timestamp timestamp, - time (to the minute level) when a user hit a page
+    node_id integer, -- id of page that was hit
+    pageviews integer - number of times the user hit a page
+);
+
+create table ga_session_features
+(
+    session_id text, -- unique session identifier, matches with session_id from ga_session_views, primary key
+    medium text, -- way the user came to the site including: organic, direct, referral
+    device_category text, -- type of device the user used options are: mobile, desktop, tablet
+    browser text -- type of browser user used:
+);
+
+# 1.	Write a query that shows how many pageviews occurred in the last week
+# 2.	How many sessions have organic as a medium?
+# 3.	Create a list of all nodes with the amount of pageviews that came from users with an organic medium in the last 30 days with the highest number first
