@@ -12,6 +12,8 @@ I decided to look into the question of whether health care expenditure has an af
 
 ### Gathering and Cleaning Data
 
+Data was collected from the [Kaiser Foundation](https://www.kff.org/other/state-indicator/health-spending-per-capita/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D) and [Data.Gov](https://catalog.data.gov/dataset/drug-poisoning-mortality-by-state-united-states). 
+
 ### Conclusions
 
 ### Further Work
