@@ -1,1 +1,23 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
 
+___
+setwd("~/Documents/Winter 2018/Statistics 2/")
+info <- read.csv("~/Documents/Winter 2018/Statistics 2/consolidated.csv")
+library(ggplot2)
+View(info)
+healthcare <- ggplot(info, aes(y=info$Healthcare, x=info$State))+
+  geom_point()
+healthcare
+___
+
+___
+drugs <- ggplot(info, aes(y=info$Drug.Mortality, x=info$State))+
+  geom_point()
+drugs
+
+reg <- lm(Drug.Mortality ~ Healthcare, data = info)
+summary(healthcare_spendingONdrug_mortality)
+___
