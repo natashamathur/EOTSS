@@ -34,5 +34,12 @@ JOIN ga_session_features on ga_session_views_id = ga_session_features_id
 WHERE ga_session_features.medium = 'orgnaic' AND hit_timestamp ? DATE_SUB(CURRENT_TIMESTAMP, INTERVAL 30 day)
 ORDER BY ga_session_view.pageviews DESC;
 
-# 4. 
+# 4. Which device accounted for the most pageviews each day?
+
+SELECT ga_session_features.device, SUM(ga_session_views.pageviews), DATE_FORMAT(ga_session_views.hit_timestamp, %d) AS hitsperday
+FROM ga_session_views
+JOIN ga_session_features ON ga_session_views.session_id = ga_session_features.session_id
+GROUP_BY ga_session_features.device, hitsperday
+ORDER BY hitsperday
+LIMIT 1;
 
